@@ -1,0 +1,27 @@
+<!-- plantillas/base.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Blog en Django</title>
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <header>
+        <h1>
+            <a href="{% url 'inicio' %}"> Blog en Django</a>
+        </h1>
+    </header>
+    <div>
+     {% block content %}
+     
+     {% endblock content %}
+    </div>
+</body>
+</html>
