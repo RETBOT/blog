@@ -12,12 +12,26 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
 </head>
-<body>
-    <header>
-        <h1>
-            <a href="{% url 'inicio' %}"> Blog en Django</a>
-        </h1>
+<body class="gradient">
+    <header> 
+        <div class="nav-left">
+        <h1> <a href="{% url 'inicio' %}"> Blog en Django</a> </h1>
+        </div>
+        <div class="nav-right">
+            <button class="btn"><a href="{% url 'nueva_publicacion' %}">Nueva entrada de blog</a></button>
+            {% if user.is_authenticated %}
+            <p>Hola {{ user.username }} 
+                <button class="btn"><a href="{% url 'logout' %}">Salir (Cerrar sesion)</a></button>
+            </p>
+            {% else %}
+                <p> No ha iniciado sesión </p>
+                <a><button class="btn"><a href="{% url 'login' %}">Iniciar sesion</button></a>
+                <p>Crear cuenta</p>
+                <a href="{% url 'registro' %}"><button class="btn">Crear cuenta</button></a>         
+            {% endif %}
+        </div>
     </header>
+
     <div>
      {% block content %}
      

@@ -1,13 +1,12 @@
 <!--plantilla/detalle_publicaciones-->
-
 {% extends "base.html" %} 
 
-
 {% block content %}
-    <div class="entrada-publicaciones">
-        <h2>{{ publicacion.titulo }}</h2>
+    <div class="entrada-publicacion">
+        <h2> {{ publicacion.titulo }}</h2>
          <p>{{ publicacion.cuerpo }}</p>
-
     </div>
+    <button class="btn"><a href="{% url 'editar_publicacion' publicacion.pk %}"> Editar publicacion de Blog</button></p>
+    <button class="btn"><a href="{% url 'eliminar_publicacion' publicacion.pk %}"> Eliminar publicacion de Blog</button></p>
 {% endblock content %}
     

@@ -1,0 +1,10 @@
+<!-- plantilla/editar_publicacion.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Editar publicacion</h1>
+    <form action="" method="post">{% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn" type="submit" value="Modificar" style="color: black;">
+    </form>
+{% endblock content %}
