@@ -6,7 +6,7 @@
         <h2> {{ publicacion.titulo }}</h2>
          <p>{{ publicacion.cuerpo }}</p>
     </div>
-    <button class="btn"><a href="{% url 'editar_publicacion' publicacion.pk %}"> Editar publicacion de Blog</button></p>
-    <button class="btn"><a href="{% url 'eliminar_publicacion' publicacion.pk %}"> Eliminar publicacion de Blog</button></p>
+    <a href="{% url 'editar_publicacion' publicacion.pk %}"><button class="btn">Editar publicacion de Blog</button></a>
+    <a href="{% url 'eliminar_publicacion' publicacion.pk %}"><button class="btn">Eliminar publicacion de Blog</button></a>
 {% endblock content %}
     

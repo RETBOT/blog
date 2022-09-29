@@ -18,14 +18,14 @@
         <h1> <a href="{% url 'inicio' %}"> Blog en Django</a> </h1>
         </div>
         <div class="nav-right">
-            <button class="btn"><a href="{% url 'nueva_publicacion' %}">Nueva entrada de blog</a></button>
+            <a href="{% url 'nueva_publicacion' %}"><button class="btn">Nueva entrada de blog</button></a>
             {% if user.is_authenticated %}
             <p>Hola {{ user.username }} 
-                <button class="btn"><a href="{% url 'logout' %}">Salir (Cerrar sesion)</a></button>
+                <a href="{% url 'logout' %}"><button class="btn">Salir (Cerrar sesion)</button></a>
             </p>
             {% else %}
                 <p> No ha iniciado sesión </p>
-                <a><button class="btn"><a href="{% url 'login' %}">Iniciar sesion</button></a>
+                <a href="{% url 'login' %}"><button class="btn">Iniciar sesion</button></a>
                 <p>Crear cuenta</p>
                 <a href="{% url 'registro' %}"><button class="btn">Crear cuenta</button></a>         
             {% endif %}
